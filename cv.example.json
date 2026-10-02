@@ -1,11 +1,11 @@
 {
   "profile": {
-    "name": "Jane Example",
-    "title": "Senior Software Engineer & Architect",
-    "email": "jane.example@example.com",
-    "phone": "+49 123 4567890",
+    "name": "Марк Фабен",
+    "title": "Junior DevOps Engineer",
+    "email": "fabentoor@gmail.com",
+    "phone": "+78005553535",
     "location": "Berlin, Germany",
-    "website": "https://example.com",
+    "website": "https://dota2.gay",
     "avatar": "/avatar.svg",
     "bio": "Experienced software engineer passionate about clean code, web performance, and modern developer tooling. (This is example content — replace it in cv.json with your own bio!)",
     "socials": [
