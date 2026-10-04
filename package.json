@@ -20,5 +20,9 @@
   },
   "devDependencies": {
     "@types/node": "^26.2.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "puppeteer@25.8.0": true
   }
 }
