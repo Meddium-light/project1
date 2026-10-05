@@ -1,0 +1,29 @@
+name: TEST1
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: copyproject
+        uses: actions/checkout@v4
+      - name: usenodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: installzavis
+        run: npm ci
+      - name: cleancv #чтобывзялсяэкзампл
+        run: rm -f cv.json
+      - name: npmbuild
+        run: npm run build
+      - name: test
+        run: test -f dist/index.html
