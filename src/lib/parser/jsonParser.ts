@@ -8,7 +8,6 @@ export async function parseJson(filePath: string) {
     if (!result.success) {
         throw new Error(result.error.issues.map(i => i.message).join(", "));
     }
-    console.log(result.data);
-    console.log(typeof result.data)
+
     return result.data;
 }
