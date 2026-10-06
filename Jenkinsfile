@@ -29,7 +29,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {
-                sh 'docker build -n project1:${BUILD_NUMBER}'
+                sh 'docker build -t project1:${BUILD_NUMBER} .'
             }
         }
 
@@ -37,6 +37,18 @@ pipeline {
             steps {
                 sh 'docker run -d -p 5000:80 --name app1 project1:${BUILD_NUMBER}'
             }
+        }
+
+        stage('curl progon') {
+            steps {
+                sh 'sleep 10'
+                sh 'curl -f http://127.0.0.1:5000/ > /dev/null'
+            }
+        }
+    }
+    post {
+        always{
+            sh 'docker rm -f app1 || true'
         }
     }
 }
