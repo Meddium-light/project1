@@ -9,12 +9,6 @@ pipeline {
             }
         }
 
-        stage('Use example CV') {
-            steps {
-                sh 'rm -f cv.json'
-            }
-        }
-
         stage('Build') {
             steps {
                 sh 'npm run build'
