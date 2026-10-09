@@ -13,11 +13,11 @@ pipeline {
             steps {
                 withCredentials([
                     file(
-                        credentialsID: 'cv-json',
-                        variable: 'CV-FILE'
+                        credentialsId: 'cv-json',
+                        variable: 'CV_FILE'
                     )
                 ]) {
-                    sh 'cp "$CV-FILE" cv.json'
+                    sh 'cp "$CV_FILE" cv.json'
                 }
             }
         }
