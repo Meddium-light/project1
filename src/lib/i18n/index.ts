@@ -27,6 +27,19 @@ export const translations = {
     downloadAtsPdf: "📄 ATS PDF",
     downloadDesignPdf: "🎨 Design PDF",
   },
+  ru: {
+    aboutMe: "Обо мне",
+    experience: "Опыт работы",
+    education: "Образование",
+    skills: "Навыки",
+    projects: "Проекты",
+    certifications: "Сертификации",
+    languages: "Языки",
+    contact: "Контакты",
+    present: "Сейчас",
+    downloadAtsPdf: "📄 Текст PDF",
+    downloadDesignPdf: "🎨 PDF с картинками",
+  },
 } as const;
 
 export type TranslationKey = keyof typeof translations.en;
