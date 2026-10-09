@@ -9,6 +9,19 @@ pipeline {
             }
         }
 
+        stage('add origin cv') {
+            steps {
+                withCredentials([
+                    file(
+                        credentialsID: 'cv-json',
+                        variable: 'CV-FILE'
+                    )
+                ]) {
+                    sh 'cp "$CV-FILE" cv.json'
+                }
+            }
+        }
+
         stage('Build') {
             steps {
                 sh 'npm run build'
