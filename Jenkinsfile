@@ -81,6 +81,7 @@ pipeline {
         always{
             sh 'docker rm -f app1 || true'
             sh 'docker logout ghcr.io || true'
+            sh 'rm -f cv.json'
         }
     }
 }
