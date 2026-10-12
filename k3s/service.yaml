@@ -1,0 +1,12 @@
+#а это наш сервис, тут живут поды, общаются посредством CNI и получают запросы через сервис(а он сам и балансирует тожиии)
+apiVersion: v1
+kind: Service
+metadata:
+  name: project1-service
+spec:
+  selector:
+    app: project1
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

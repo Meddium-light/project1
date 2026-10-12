@@ -1,0 +1,21 @@
+#это наш ингрессик, на траефике, так как нгинкс ингресс помер, а проксировать сервисы наружу надо
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+metadata:
+  name: project1-ingress
+
+spec:
+  ingressClassName: traefik
+
+  rules:
+    - host: project1.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: project1-service
+                port:
+                  number: 80
